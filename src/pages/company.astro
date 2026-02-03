@@ -1,0 +1,14 @@
+---
+import Navbar from "../components/navbar/Navbar";
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/footer/Footer";
+import Company from "../components/company/Company";
+
+const { pathname } = Astro?.url;
+---
+
+<Layout>
+  <Navbar pathname={pathname} client:load />
+  <Company />
+  <Footer />
+</Layout>

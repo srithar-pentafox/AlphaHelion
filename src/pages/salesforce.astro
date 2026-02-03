@@ -1,0 +1,15 @@
+---
+import Navbar from "../components/navbar/Navbar";
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/footer/Footer";
+import "../styles/global.css"
+import SalesForce from "../components/sapSolutions/salesForce/SalesForce"
+
+const { pathname } = Astro?.url;
+---
+
+<Layout>
+  <Navbar pathname={pathname} client:load />
+  <SalesForce />
+  <Footer />
+</Layout>

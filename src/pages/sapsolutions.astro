@@ -1,0 +1,14 @@
+---
+import Navbar from "../components/navbar/Navbar.jsx";
+import Layout from "../layouts/Layout.astro";
+import SapSolutions from "../components/sapSolutions/SapSolutions";
+import Footer from "../components/footer/Footer";
+
+const { pathname } = Astro.url;
+---
+
+<Layout>
+  <Navbar pathname={pathname} client:load />
+  <SapSolutions client:load />
+    <Footer />
+</Layout>
