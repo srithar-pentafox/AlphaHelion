@@ -172,7 +172,7 @@ function ServiceOffers() {
 
           <section className="flex justify-center">
             {Proposition?.map((item, index) => (
-              <div className="flex justify-center w-[50%]">
+              <div className="flex justify-center w-[100%] md:w-[50%]">
 
                 <DynamicCard {...item} hoverEffect={false} key={index} />
               </div>

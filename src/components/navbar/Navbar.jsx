@@ -206,7 +206,7 @@ export default function Navbar({ pathname }) {
                 />
               </div>
 
-              {isSolutionClicked && (
+              {/* {isSolutionClicked && (
                 <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[1000px] bg-blue-100 rounded-lg shadow-xl p-6 z-50">
                   <div className="grid grid-cols-3 gap-6">
                     {solutionItems.map((item, i) => (
@@ -239,7 +239,7 @@ export default function Navbar({ pathname }) {
                     ))}
                   </div>
                 </div>
-              )}
+              )} */}
             </div>
 
             {/* DELIVERY */}
@@ -259,7 +259,7 @@ export default function Navbar({ pathname }) {
                 />
               </div>
 
-              {isDeliveryClicked && (
+              {/* {isDeliveryClicked && (
                 <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[800px] bg-blue-100 rounded-lg shadow-xl p-6 z-50">
                   <div className="grid grid-cols-2 gap-3">
                     {deliveryItems.map((item, i) => (
@@ -277,23 +277,81 @@ export default function Navbar({ pathname }) {
                     ))}
                   </div>
                 </div>
-              )}
+              )} */}
             </div>
           </nav>
 
           {/* DESKTOP CTA */}
-          <a
+          {/* <a
             href="/#contact"
             className="hidden lg:inline-block bg-blue-500 text-white py-2 px-4 rounded-lg shadow-md hover:bg-blue-700"
           >
             Talk to an Expert
-          </a>
+          </a> */}
 
           {/* MOBILE / TABLET HAMBURGER */}
           <button className="lg:hidden" onClick={() => setIsSidebarOpen(true)}>
             <IconMenu2 size={28} className="text-slate-900" />
           </button>
         </div>
+
+        {isDeliveryClicked && (
+          <div 
+          className="absolute left-0 w-full top-22 mt-2 w-[1000px] bg-blue-100 shadow-xl p-6 z-50"
+          // className="absolute left-0 translate-x-1/2 top-full mt-2 w-[800px] bg-blue-100 rounded-lg shadow-xl p-6 z-50"
+          >
+            <div className="grid grid-cols-2 gap-3">
+              {deliveryItems.map((item, i) => (
+                <div
+                  key={i}
+                  className="flex items-center gap-3 p-3 rounded-md cursor-pointer hover:bg-blue-50"
+                  onClick={() => handleLinkClick(item)}
+                >
+                  <item.Icon
+                    size={30}
+                    className="text-blue-400 bg-white p-1 rounded-md"
+                  />
+                  {item.title}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {isSolutionClicked && (
+          <div className="absolute left-0 w-full top-22 mt-2 w-[1000px] bg-blue-100 shadow-xl p-6 z-50">
+            <div className="grid grid-cols-3 gap-6">
+              {solutionItems.map((item, i) => (
+                <div key={i}>
+                  <div
+                    className="flex items-center gap-3 p-3 rounded-md cursor-pointer hover:bg-blue-50"
+                    onClick={() => handleLinkClick(item)}
+                  >
+                    <item.Icon
+                      size={30}
+                      className="text-blue-400 bg-white p-1 rounded-md"
+                    />
+                    <span className="font-semibold">{item.title}</span>
+                  </div>
+
+                  {item.subCategories && (
+                    <div className="ml-8 mt-2 space-y-2">
+                      {item.subCategories.map((sub, si) => (
+                        <div
+                          key={si}
+                          className="text-sm cursor-pointer hover:text-blue-600 font-medium"
+                          onClick={() => handleLinkClick(sub)}
+                        >
+                          • {sub.title}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </header>
 
       {/* ================= MOBILE / TABLET SIDEBAR ================= */}
@@ -415,13 +473,13 @@ export default function Navbar({ pathname }) {
           )}
 
           {/* CTA */}
-          <a
+          {/* <a
             href="/#contact"
             className="block text-center bg-blue-500 text-white py-3 rounded-md font-semibold text-md"
             onClick={() => setIsSidebarOpen(false)}
           >
             Talk to an Expert
-          </a>
+          </a> */}
         </div>
       </aside>
     </>
