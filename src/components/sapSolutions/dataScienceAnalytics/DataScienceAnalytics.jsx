@@ -29,6 +29,7 @@ const dataScience = [
       iconConfig: {
         Icon: IconCompass,
         iconColor: "text-blue-400",
+        // size: 32
       },
       title: "Data & Analytics Strategy Advisory",
     },

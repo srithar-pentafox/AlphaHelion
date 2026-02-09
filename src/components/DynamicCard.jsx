@@ -124,10 +124,11 @@ export default function DynamicCard({
                     sm:group-hover:bg-white
                     md:group-hover:bg-blue-100 md:group-hover:shadow-none`
                   }
+                  h-11 w-11
                   `}
               >
                 <Icon
-                  size={`${cardHeader?.iconConfig?.size ? cardHeader?.iconConfig?.size : 28}`}
+                  size={`${cardHeader?.iconConfig?.size ? cardHeader?.iconConfig?.size : 30}`}
                   stroke={1.5}
                   className={`${cardHeader?.iconConfig?.singleColor ? `text-${cardHeader?.iconConfig?.singleColor}-400` : cardHeader?.iconConfig?.iconColor}`}
                 />
@@ -161,10 +162,11 @@ export default function DynamicCard({
                     sm:group-hover:bg-white
                     md:group-hover:bg-blue-100 md:group-hover:shadow-none`
                   }
+                  h-13 w-13
                   `}
                 >
                   <TitleIcon
-                    size={`${cardTitles?.iconConfig?.size ? cardTitles?.iconConfig?.size : 28}`}
+                    size={`${cardTitles?.iconConfig?.size ? cardTitles?.iconConfig?.size : 30}`}
                     stroke={1.5}
                     className={`${cardTitles?.iconConfig?.singleColor ? `text-${cardTitles?.iconConfig?.singleColor}-400` : cardTitles?.iconConfig?.iconColor}`}
                   />
