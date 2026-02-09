@@ -65,7 +65,7 @@ function ContactForm() {
     }
 
     if (!form.company.trim() || form.company.trim().length < 3) {
-      newErrors.company = "Please enter your Company Name";
+      newErrors.company = "Please enter your company name";
     }
 
     setErrors(newErrors);
