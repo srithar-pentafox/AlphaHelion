@@ -9,6 +9,6 @@ const { pathname } = Astro?.url;
 
 <Layout title="Delivery">
   <Navbar pathname={pathname}  client:load/>
-  <DataScienceAnalytics />
+  <DataScienceAnalytics client:load />
   <Footer />
 </Layout>

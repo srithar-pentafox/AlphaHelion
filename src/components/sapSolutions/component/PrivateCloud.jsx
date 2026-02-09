@@ -9,7 +9,6 @@ import {
   IconPointFilled,
   IconRocket,
 } from "@tabler/icons-react";
-import ListInCard from "../../ListInCard";
 import QASimpleRender from "../../QASimpleRender";
 
 const Icons = {
@@ -118,99 +117,3 @@ function PrivateCloud() {
 }
 
 export default PrivateCloud;
-// import React from "react";
-// import ContentLayout from "../../ContentLayout";
-// import Title from "../../Title";
-// import DynamicCard from "../../DynamicCard";
-// import {
-//   IconArrowRight,
-//   IconCircleCheckFilled,
-//   IconCompass,
-//   IconRocket,
-// } from "@tabler/icons-react";
-
-// const privateCloudData = [
-//   {
-//     cardTitles: {
-//       titleIcon: (
-//         <div className="bg-blue-500 rounded-sm p-1">
-//           <IconCompass size={29} className="text-white" />
-//         </div>
-//       ),
-//       title: "Starter Package – Readiness & Roadmap",
-//     },
-//     contentHeading: "WHAT WE DELIVER",
-//     contentIcon: <IconArrowRight size={17} className="text-blue-400" />,
-//     content: [
-//       "Infrastructure & landscape assessment",
-//       "GROW with SAP readiness assessment",
-//       "Integration readiness analysis",
-//       "Target cloud architecture definition",
-//     ],
-//     sectionIcon: (
-//       <IconCircleCheckFilled className="text-green-400" size={20} stroke={3} />
-//     ),
-//     section: {
-//       title: "Business Outcomes",
-//       content: [
-//         "Clear adoption roadmap",
-//         "Risk and dependency visibility",
-//         "Alignment with Clean Core principles",
-//       ],
-//     },
-//   },
-
-//   {
-//     cardTitles: {
-//       titleIcon: (
-//         <div className="bg-black rounded-sm p-1">
-//           <IconRocket size={29} className="text-white" />
-//         </div>
-//       ),
-//       title: "Implementation Package – End-to-End Delivery",
-//     },
-//     contentIcon: <IconArrowRight size={17} className="text-slate-600" />,
-//     contentHeading: "WHAT WE DELIVER",
-//     content: [
-//       "Fit-to-standard SAP S/4HANA Public Cloud implementation",
-//       "Data migration, testing, and user training",
-//       "Go-live execution and hypercare support",
-//     ],
-//     sectionIcon: (
-//       <IconCircleCheckFilled className="text-green-400" size={20} stroke={3} />
-//     ),
-//     section: {
-//       title: "Business Outcomes",
-//       content: [
-//         "Live public cloud ERP",
-//         "Upgrade-safe, standardized core",
-//         "Faster time-to-value",
-//       ],
-//     },
-//   },
-// ];
-
-// function PrivateCloud() {
-//   return (
-//     <ContentLayout cardBg="bg-white">
-//       <section className="flex flex-col gap-8">
-//         <Title
-//           title="SAP S/4HANA Public Cloud (GROW with SAP)"
-//           subTitle="Enterprise-ready cloud ERP with standardized processes and continuous innovation"
-//         />
-//         <div
-//           className="
-//           grid gap-4 grid-cols-1
-//           md:grid-cols-2 gap-10
-//           "
-//         >
-//           {privateCloudData?.map((item, index) => (
-//             <DynamicCard {...item} cardType="stack" key={index} />
-//           ))}
-//         </div>
-//       </section>
-//     </ContentLayout>
-//   );
-// }
-
-// export default PrivateCloud;

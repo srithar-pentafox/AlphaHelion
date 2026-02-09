@@ -3,13 +3,13 @@ import Navbar from "../components/navbar/Navbar";
 import Layout from "../layouts/Layout.astro";
 import Home from "../components/home/Home";
 import Footer from "../components/footer/Footer";
-import "../styles/global.css"
+import "../styles/global.css";
 
 const { pathname } = Astro?.url;
 ---
 
 <Layout>
   <Navbar pathname={pathname} client:load />
-  <Home />
+  <Home client:load />
   <Footer />
 </Layout>

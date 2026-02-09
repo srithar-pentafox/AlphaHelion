@@ -3,94 +3,25 @@ import ContentLayout from "../../ContentLayout";
 import Title from "../../Title";
 import StatsCard from "../../StatsCard";
 import {
-  IconArrowRight,
   IconChartBar,
-  IconCompass,
   IconLink,
+  IconPlugConnected,
   IconPointFilled,
   IconPuzzle,
-  IconPuzzleFilled,
-  IconRobot,
+  IconRefresh,
+  IconRocket,
   IconSettingsAutomation,
+  IconShieldCheck,
+  IconStack,
+  
 } from "@tabler/icons-react";
-import ListInCard from "../../ListInCard";
 import QASimpleRender from "../../QASimpleRender";
 import DynamicCard from "../../DynamicCard";
+import { ResponsiveHeading } from "../../../constant/commonConfig";
 
 const iconConfigSize = {
   size: 28,
 };
-
-const statsCard = [
-  {
-    iconConfig: {
-      Icon: IconLink,
-      singleColor: "blue",
-      ...iconConfigSize,
-    },
-    title: "Integration & Connectivity",
-    subTitle: "Seamless system connections",
-  },
-  {
-    iconConfig: {
-      Icon: IconPuzzle,
-      iconBg: "bg-violet-100",
-      iconColor: "text-violet-400",
-      ...iconConfigSize,
-    },
-    title: "Side-by-Side Extensions",
-    subTitle: "Clean core customizations",
-  },
-  {
-    iconConfig: {
-      Icon: IconSettingsAutomation,
-      singleColor: "green",
-      ...iconConfigSize,
-    },
-    title: "Automation & AI",
-    subTitle: "Intelligent process automation",
-  },
-  {
-    iconConfig: {
-      Icon: IconChartBar,
-      iconBg: "bg-orange-100",
-      iconColor: "text-orange-400",
-      ...iconConfigSize,
-    },
-    title: "Data & Analytics",
-    subTitle: "Unified data insights",
-  },
-];
-
-// const BTPService = {
-//   title: "Key Services",
-//   contentList: [
-//     {
-//       subTitle: "SAP BTP Application Development",
-//     },
-//     {
-//       subTitle: "SAP BTP Automation & AI",
-//     },
-//     {
-//       subTitle: "SAP BTP Cloud Migration",
-//     },
-//     {
-//       subTitle: "SAP BTP Performance Optimization",
-//     },
-//     {
-//       subTitle: "SAP BTP Integration Services",
-//     },
-//     {
-//       subTitle: "SAP BTP Data & Analytics",
-//     },
-//     {
-//       subTitle: "SAP BTP Security & Compliance",
-//     },
-//     {
-//       subTitle: "SAP BTP Cloud Operations",
-//     },
-//   ],
-// };
 
 const QAquestions = [
   {
@@ -161,20 +92,36 @@ const coreStrategy = [
 
 const howBtpClearCore = [
   {
+    iconConfig: {
+      Icon: IconStack,
+      singleColor: "green",
+    },
     title: "Side-by-Side Extensions",
     subTitle:
       "Build custom applications on BTP without modifying core SAP systems",
   },
   {
+    iconConfig: {
+      Icon: IconPlugConnected,
+      singleColor: "green",
+    },
     title: "Non-Invasive Integrations",
     subTitle: "Connect systems via APIs instead of custom code in ERP",
   },
   {
+    iconConfig: {
+      Icon: IconRefresh,
+      singleColor: "green",
+    },
     title: "Seamless Upgrades",
     subTitle:
       "Keep your SAP core clean for smooth S/4HANA migrations and updates",
   },
   {
+    iconConfig: {
+      Icon: IconShieldCheck,
+      singleColor: "green",
+    },
     title: "Future-Proof Customizations",
     subTitle: " Extensions built on BTP remain compatible across SAP updates",
   },
@@ -190,7 +137,9 @@ function BusinessTech() {
         ))}
 
         <section className="flex flex-col gap-5">
-          <h1 className="font-semibold text-xl">Benefits of SAP BTP</h1>
+          <h1 className={`${ResponsiveHeading} font-semibold`}>
+            Benefits of SAP BTP
+          </h1>
           <section
             className="
         grid grid-cols-1 gap-4
@@ -208,7 +157,9 @@ function BusinessTech() {
         ))}
 
         <section className="flex flex-col gap-5">
-          <h1 className="font-semibold text-xl">How BTP Enables Clean Core</h1>
+          <h1 className={`${ResponsiveHeading} font-semibold`}>
+            How BTP Enables Clean Core
+          </h1>
           <section
             className="
         grid grid-cols-1 gap-4

@@ -13,7 +13,7 @@ function StatsCard({ iconConfig = {}, title = null, subTitle = null, key }) {
       <section className="flex justify-center">
         <div
           className={`
-              flex jusify-center align-center ${iconConfig?.singleColor ? `bg-${iconConfig?.singleColor}-100` : iconConfig?.iconBg ? iconConfig?.iconBg : "bg-blue-100"} p-3 rounded-4xl
+              flex jusify-center align-center ${iconConfig?.singleColor ? `bg-${iconConfig?.singleColor}-50` : iconConfig?.iconBg ? iconConfig?.iconBg : "bg-blue-100"} p-3 rounded-4xl
               `}
         >
           {Icon ? (

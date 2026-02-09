@@ -8,7 +8,7 @@ export const engagementModels = [
   {
     iconConfig: {
       Icon: IconBulb,
-      singleColor: "blue",
+      singleColor: "green",
     },
     title: "Delivery Excellence",
     subTitle: "End-to-end governance, execution, and measurable outcomes"
@@ -16,7 +16,7 @@ export const engagementModels = [
 {
     iconConfig: {
         Icon: IconRocket,
-        singleColor: "blue",
+        singleColor: "green",
     },
     title: "Innovation at Scale",
     subTitle: "Modern, clean-core, and future-ready technology solutions"
@@ -24,7 +24,7 @@ export const engagementModels = [
 {
     iconConfig: {
         Icon: IconSettings,
-        singleColor: "blue",
+        singleColor: "green",
     },
     title: "Trusted Partnerships",
     subTitle: "Long-term collaboration, not just projects"
@@ -32,7 +32,7 @@ export const engagementModels = [
 {
     iconConfig: {
         Icon: IconChartLine,
-        singleColor: "blue",
+        singleColor: "green",
     },
     title: "Industry Expertise",
     subTitle: "Deep knowledge across enterprise technology and key sectors"
@@ -49,8 +49,8 @@ function WhyChooseAlphaHelionGlobal() {
           className="
                 grid gap-4
               sm:grid-cols-1
-              md:grid-cols-2 md:gap-8 
-              xl:grid-cols-4 md:gap-8
+              md:grid-cols-2 md:gap-4 
+              xl:grid-cols-4
               "
         >
           {engagementModels?.map((model, index) => (

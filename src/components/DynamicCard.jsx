@@ -99,8 +99,8 @@ export default function DynamicCard({
       return (
         <section
           className={`
-        group
-         ${THEME_COLORS?.[themeColor]?.cardBg ? THEME_COLORS?.[themeColor]?.cardBg : DEFAULT?.cardBg}  flex flex-col gap-4 p-5 rounded-xl border-2 
+        group h-full
+         ${THEME_COLORS?.[themeColor]?.cardBg ? THEME_COLORS?.[themeColor]?.cardBg : DEFAULT?.cardBg}  flex flex-col flex-grow gap-4 p-5 rounded-xl border-2 
          ${THEME_COLORS?.[themeColor]?.border ? THEME_COLORS?.[themeColor]?.border : DEFAULT?.border} transition-colors duration-200
         ${
           hoverEffect &&
@@ -138,7 +138,9 @@ export default function DynamicCard({
               className={`flex flex-col ${cardHeader?.content && cardHeader?.badge ? "justify-center" : "justify-start"} align-center`}
             >
               {cardHeader?.content && (
-                <h1 className={`${responsiveSectionHeading} font-semibold ${THEME_COLORS?.[themeColor]?.title ? THEME_COLORS?.[themeColor]?.title : cardTitles?.color ? cardTitles?.color : DEFAULT?.title}`}>
+                <h1
+                  className={`${responsiveSectionHeading} font-semibold ${THEME_COLORS?.[themeColor]?.title ? THEME_COLORS?.[themeColor]?.title : cardTitles?.color ? cardTitles?.color : DEFAULT?.title}`}
+                >
                   {cardHeader?.content?.toUpperCase()}
                 </h1>
               )}
@@ -155,6 +157,7 @@ export default function DynamicCard({
                 <div
                   className={`
                   flex jusify-center align-center ${cardTitles?.iconConfig?.singleColor ? `bg-${cardTitles?.iconConfig?.singleColor}-100` : cardTitles?.iconConfig?.iconBg ? cardTitles?.iconConfig?.iconBg : "bg-white"} p-3 rounded-lg transition-all duration-200
+                  shadow-lg
                   ${
                     hoverEffect &&
                     `
@@ -215,44 +218,57 @@ export default function DynamicCard({
     case "section":
       return (
         <section
-          className={`flex flex-col gap-3 rounded-xl border-2 ${THEME_COLORS?.[themeColor]?.border ? THEME_COLORS?.[themeColor]?.border : DEFAULT?.border} ${THEME_COLORS?.[themeColor]?.cardBg ? THEME_COLORS?.[themeColor]?.cardBg : DEFAULT?.cardBg} p-5`}
+          className={`
+        h-full
+        flex flex-col
+        gap-4
+        rounded-xl
+        border-2
+        ${THEME_COLORS?.[themeColor]?.border ?? DEFAULT.border}
+        ${THEME_COLORS?.[themeColor]?.cardBg ?? DEFAULT.cardBg}
+        p-5
+      `}
         >
-          {/* Header */}
+          {/* ================= Header ================= */}
           <section className="flex flex-col gap-1">
             <header className="flex items-start justify-between">
-              <div
-                className={`flex justify-center align-center ${cardTitles?.titleIcon ? "gap-2" : "gap-0"}`}
-              >
-                <div>{cardTitles?.titleIcon && cardTitles?.titleIcon}</div>
+              <div className="flex items-start gap-2">
+                {cardTitles?.titleIcon && <div>{cardTitles.titleIcon}</div>}
                 <h1
-                  className={`${ResponsiveHeading} font-semibold ${THEME_COLORS?.[themeColor]?.title ? THEME_COLORS?.[themeColor]?.title : cardTitles?.color ? cardTitles?.color : DEFAULT?.title}`}
+                  className={`${ResponsiveHeading} font-semibold ${
+                    THEME_COLORS?.[themeColor]?.title ?? DEFAULT.title
+                  }`}
                 >
                   {cardTitles?.title}
                 </h1>
               </div>
+
               {cardHeader?.badge && (
                 <span className="rounded-full bg-blue-100 text-blue-400 px-3 py-1 text-xs font-bold">
-                  {cardHeader?.badge}
+                  {cardHeader.badge}
                 </span>
               )}
             </header>
 
             {cardTitles?.subTitle && (
               <p className="text-md font-medium text-slate-800">
-                {cardTitles?.subTitle}
+                {cardTitles.subTitle}
               </p>
             )}
           </section>
 
-          {/* Checklist */}
-          <section className="flex flex-col gap-3">
+          {/* ================= Main Content (GROWS) ================= */}
+          <section className="flex flex-col gap-3 flex-grow">
             {contentHeading && (
               <p
-                className={`text-md font-bold capitalize ${THEME_COLORS?.[themeColor]?.title ? THEME_COLORS?.[themeColor]?.title : DEFAULT?.title}`}
+                className={`text-md font-bold capitalize ${
+                  THEME_COLORS?.[themeColor]?.title ?? DEFAULT.title
+                }`}
               >
                 {contentHeading}
               </p>
             )}
+
             {Array.isArray(content) ? (
               content?.map((item, index) => (
                 <div className="flex gap-1 align-start">
@@ -285,37 +301,143 @@ export default function DynamicCard({
             ) : null}
           </section>
 
-          <section className="flex flex-col gap-3 bg-white p-4 border-2 border-blue-100 rounded-md">
-            <section className="flex flex-col gap-3">
-              <p
-                className={`text-md font-bold capitalize ${THEME_COLORS?.[themeColor]?.title ? THEME_COLORS?.[themeColor]?.title : DEFAULT?.title}`}
-              >
-                {section?.title}
-              </p>
-              {Array.isArray(section?.content) ? (
-                section?.content?.map((item, index) => (
-                  <div className="flex gap-1 align-start">
-                    {sectionIcon && (
-                      <div>
-                        <div className="p-1 rounded-xl">{sectionIcon}</div>
-                      </div>
-                    )}
-                    <p key={index} className={`${contentColor} font-normal`}>
-                      {item}
-                    </p>
-                  </div>
-                ))
-              ) : typeof section?.content !== "object" && section?.content ? (
-                <p>{section?.content}</p>
-              ) : null}
-            </section>
+          {/* ================= Business Outcomes (BOTTOM ALIGNED) ================= */}
+          <section
+            className="
+          mt-auto
+          flex flex-col gap-3
+          bg-white
+          p-4
+          border-2
+          border-blue-100
+          rounded-md
+        "
+          >
+            <p
+              className={`text-md font-bold capitalize ${
+                THEME_COLORS?.[themeColor]?.title ?? DEFAULT.title
+              }`}
+            >
+              {section?.title}
+            </p>
+
+            {Array.isArray(section?.content) &&
+              section.content.map((item, index) => (
+                <div className="flex gap-2 items-start" key={index}>
+                  {sectionIcon && (
+                    <div className="p-1 rounded-xl">{sectionIcon}</div>
+                  )}
+                  <p className="text-slate-800 font-normal">{item}</p>
+                </div>
+              ))}
           </section>
         </section>
       );
+
+    // case "section":
+    //   return (
+    //     <section
+    //       className={`h-full flex flex-col gap-3 flex-grow rounded-xl border-2 ${THEME_COLORS?.[themeColor]?.border ? THEME_COLORS?.[themeColor]?.border : DEFAULT?.border} ${THEME_COLORS?.[themeColor]?.cardBg ? THEME_COLORS?.[themeColor]?.cardBg : DEFAULT?.cardBg} p-5`}
+    //     >
+    //       {/* Header */}
+    //       <section className="flex flex-col gap-1">
+    //         <header className="flex items-start justify-between">
+    //           <div
+    //             className={`flex justify-center align-center ${cardTitles?.titleIcon ? "gap-2" : "gap-0"}`}
+    //           >
+    //             <div>{cardTitles?.titleIcon && cardTitles?.titleIcon}</div>
+    //             <h1
+    //               className={`${ResponsiveHeading} font-semibold ${THEME_COLORS?.[themeColor]?.title ? THEME_COLORS?.[themeColor]?.title : cardTitles?.color ? cardTitles?.color : DEFAULT?.title}`}
+    //             >
+    //               {cardTitles?.title}
+    //             </h1>
+    //           </div>
+    //           {cardHeader?.badge && (
+    //             <span className="rounded-full bg-blue-100 text-blue-400 px-3 py-1 text-xs font-bold">
+    //               {cardHeader?.badge}
+    //             </span>
+    //           )}
+    //         </header>
+
+    //         {cardTitles?.subTitle && (
+    //           <p className="text-md font-medium text-slate-800">
+    //             {cardTitles?.subTitle}
+    //           </p>
+    //         )}
+    //       </section>
+
+    //       {/* Checklist */}
+    //       <section className="flex flex-col gap-3">
+    //         {contentHeading && (
+    //           <p
+    //             className={`text-md font-bold capitalize ${THEME_COLORS?.[themeColor]?.title ? THEME_COLORS?.[themeColor]?.title : DEFAULT?.title}`}
+    //           >
+    //             {contentHeading}
+    //           </p>
+    //         )}
+    //         {Array.isArray(content) ? (
+    //           content?.map((item, index) => (
+    //             <div className="flex gap-1 align-start">
+    //               {contentIcon && (
+    //                 <div>
+    //                   <div className="p-1 rounded-xl">{contentIcon}</div>
+    //                 </div>
+    //               )}
+    //               {item?.split("--")?.length === 1 ? (
+    //                 <p key={index} className={`${contentColor} font-normal`}>
+    //                   {item}
+    //                 </p>
+    //               ) : (
+    //                 <div className="flex flex-col gap-1">
+    //                   <p
+    //                     key={index}
+    //                     className={`${contentColor} font-semibold`}
+    //                   >
+    //                     {item?.split("--")[0]}
+    //                   </p>
+    //                   <p key={index} className={`text-slate-700 font-normal`}>
+    //                     {item?.split("--")[1]}
+    //                   </p>
+    //                 </div>
+    //               )}
+    //             </div>
+    //           ))
+    //         ) : typeof content !== "object" && content ? (
+    //           <p>{content}</p>
+    //         ) : null}
+    //       </section>
+
+    //       <section className="flex flex-col gap-3 bg-white p-4 border-2 border-blue-100 rounded-md">
+    //         <section className="flex flex-col gap-3">
+    //           <p
+    //             className={`text-md font-bold capitalize ${THEME_COLORS?.[themeColor]?.title ? THEME_COLORS?.[themeColor]?.title : DEFAULT?.title}`}
+    //           >
+    //             {section?.title}
+    //           </p>
+    //           {Array.isArray(section?.content) ? (
+    //             section?.content?.map((item, index) => (
+    //               <div className="flex gap-1 align-start">
+    //                 {sectionIcon && (
+    //                   <div>
+    //                     <div className="p-1 rounded-xl">{sectionIcon}</div>
+    //                   </div>
+    //                 )}
+    //                 <p key={index} className={`${contentColor} font-normal`}>
+    //                   {item}
+    //                 </p>
+    //               </div>
+    //             ))
+    //           ) : typeof section?.content !== "object" && section?.content ? (
+    //             <p>{section?.content}</p>
+    //           ) : null}
+    //         </section>
+    //       </section>
+    //     </section>
+    //   );
     case "stack":
       return (
         <section
-          className={`flex flex-col gap-3 rounded-xl border-2 ${THEME_COLORS?.[themeColor]?.border ? THEME_COLORS?.[themeColor]?.border : DEFAULT?.border} ${THEME_COLORS?.[themeColor]?.cardBg ? THEME_COLORS?.[themeColor]?.cardBg : DEFAULT?.cardBg} p-5`}
+          className={`h-full flex flex-col gap-3 flex-grow rounded-xl border-2 ${THEME_COLORS?.[themeColor]?.border ? THEME_COLORS?.[themeColor]?.border : DEFAULT?.border} ${THEME_COLORS?.[themeColor]?.cardBg ? THEME_COLORS?.[themeColor]?.cardBg : DEFAULT?.cardBg} p-5`}
         >
           {/* Header */}
           <section className="flex flex-col gap-1">

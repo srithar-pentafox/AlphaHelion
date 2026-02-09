@@ -1,4 +1,5 @@
 ---
+import Footer from "../components/footer/Footer";
 import Navbar from "../components/navbar/Navbar.jsx";
 import Services from "../components/services/Services";
 import Layout from "../layouts/Layout.astro";
@@ -8,6 +9,6 @@ const { pathname } = Astro.url;
 
 <Layout>
   <Navbar pathname={pathname} client:load />
-  <Services />
-  
+  <Services client:load />
+  <Footer />
 </Layout>

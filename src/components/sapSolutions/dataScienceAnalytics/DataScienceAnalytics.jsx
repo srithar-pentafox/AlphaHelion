@@ -155,9 +155,8 @@ function DataScienceAnalytics() {
           <Title title="Data Science & Analytics" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {dataScience?.map((item, index) => {
-              // Add offset for odd-numbered cards (0-indexed, so even indices)
               if (index % 2 === 0 && index === dataScience.length - 1) {
-                // Last card when odd total count
+
                 return (
                   <div
                     key={index}

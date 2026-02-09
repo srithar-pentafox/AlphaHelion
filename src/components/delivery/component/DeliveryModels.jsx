@@ -10,11 +10,13 @@ import {
 
 /* ---------- Sub Components ---------- */
 
-function ModelItem({ icon, label }) {
+function ModelItem({ Icon, label, color = "blue" }) {
   return (
     <div className="flex flex-col items-center gap-2 text-center">
-      <div>{icon}</div>
-      <span className="text-base sm:text-lg font-semibold">{label}</span>
+      <Icon size={37} stroke={1.5} className={`text-${color}-400`} />
+      <span className={`text-${color}-400 text-base sm:text-lg font-semibold`}>
+        {label}
+      </span>
     </div>
   );
 }
@@ -24,8 +26,8 @@ function Divider() {
     <span
       className="
         hidden md:block
-        h-10 w-[2px]
-        bg-blue-400
+        h-14 w-[1px]
+        bg-blue-300
       "
     />
   );
@@ -40,7 +42,8 @@ function DeliveryModels() {
         id="delivery-models"
         className="
           mx-auto max-w-5xl
-          bg-blue-100
+          bg-blue-50
+          border-2 border-blue-100
           p-6 sm:p-8 md:p-10
           rounded-xl
           text-center
@@ -59,34 +62,15 @@ function DeliveryModels() {
               gap-12
             "
           >
-            <ModelItem
-              icon={
-                <IconBolt size={40} stroke={1.5} className="text-blue-400" />
-              }
-              label="Agile"
-            />
+            <ModelItem Icon={IconBolt} label="Agile" color="green" />
 
             <Divider />
 
-            <ModelItem
-              icon={
-                <IconArrowsShuffle
-                  size={40}
-                  stroke={1.5}
-                  className="text-blue-400"
-                />
-              }
-              label="Hybrid"
-            />
+            <ModelItem Icon={IconArrowsShuffle} label="Hybrid" color="violet" />
 
             <Divider />
 
-            <ModelItem
-              icon={
-                <IconRipple size={40} stroke={1.5} className="text-blue-400" />
-              }
-              label="Waterfall"
-            />
+            <ModelItem Icon={IconRipple} label="Waterfall" color="orange" />
           </div>
 
           {/* BULLET CONTENT */}

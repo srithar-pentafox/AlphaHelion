@@ -18,28 +18,28 @@ export const engagementModels = [
   {
     iconConfig: {
       Icon: IconBulb,
-      singleColor: "blue",
+      singleColor: "green",
     },
     title: "Consulting & Advisory",
   },
   {
     iconConfig: {
       Icon: IconRocket,
-      singleColor: "blue",
+      singleColor: "green",
     },
     title: "Implementation & Delivery",
   },
   {
     iconConfig: {
       Icon: IconSettings,
-      singleColor: "blue",
+      singleColor: "green",
     },
     title: "Managed Services",
   },
   {
     iconConfig: {
       Icon: IconChartLine,
-      singleColor: "blue",
+      singleColor: "green",
     },
     title: "PMO as a Service",
   },

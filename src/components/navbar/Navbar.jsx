@@ -77,7 +77,7 @@ export default function Navbar({ pathname }) {
 
   const solutionItems = [
     {
-      title: "SAP Solutions",
+      title: "SAP",
       href: "/sapsolutions",
       hash: "#",
       Icon: IconChartBar,
@@ -88,7 +88,7 @@ export default function Navbar({ pathname }) {
           hash: "#s4hana-private-cloud",
         },
         {
-          title: "SAP S/4HANA Public Cloud Services",
+          title: "SAP S/4HANA Public Cloud",
           href: "/sapsolutions",
           hash: "#s4hana-public-cloud",
         },
@@ -159,20 +159,17 @@ export default function Navbar({ pathname }) {
     }
   };
 
-  /* ================= JSX ================= */
-
   return (
     <>
-      {/* ================= HEADER ================= */}
       <header className="sticky top-0 z-50 w-full bg-white shadow-[0_4px_12px_rgba(0,0,0,0.06)]">
         <div className="mx-auto px-4 py-2 flex items-center justify-between lg:px-10">
           {/* LOGO */}
           <a href="/" className="flex items-center gap-3">
-            <img
+            {/* <img
               src={appLogo?.src}
               className="h-20 w-20 md:h-14 md:w-14 lg:h-20 lg:w-20 rounded-md"
               alt="AlphaHelion Global"
-            />
+            /> */}
             <div className="flex flex-col">
               <span className="font-bold text-lg md:text-xl lg:text-3xl">
                 AlphaHelion Global
@@ -297,7 +294,7 @@ export default function Navbar({ pathname }) {
 
         {isDeliveryClicked && (
           <div 
-          className="absolute left-0 w-full top-22 mt-2 w-[1000px] bg-blue-100 shadow-xl p-6 z-50"
+          className="absolute left-0 w-full top-16 mt-2 w-[1000px] bg-blue-100 shadow-xl p-6 z-50"
           // className="absolute left-0 translate-x-1/2 top-full mt-2 w-[800px] bg-blue-100 rounded-lg shadow-xl p-6 z-50"
           >
             <div className="grid grid-cols-2 gap-3">
@@ -319,7 +316,7 @@ export default function Navbar({ pathname }) {
         )}
 
         {isSolutionClicked && (
-          <div className="absolute left-0 w-full top-22 mt-2 w-[1000px] bg-blue-100 shadow-xl p-6 z-50">
+          <div className="absolute left-0 w-full top-16 mt-2 w-[1000px] bg-blue-100 shadow-xl p-6 z-50">
             <div className="grid grid-cols-3 gap-6">
               {solutionItems.map((item, i) => (
                 <div key={i}>

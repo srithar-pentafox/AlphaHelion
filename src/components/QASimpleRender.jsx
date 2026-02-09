@@ -73,7 +73,7 @@ function QASimpleRender({
 }) {
   return (
     <section className="flex flex-col gap-4 w-full">
-      {heading && <h1 className={`${ResponsiveHeading} font-semibold text-blue-500`}>{heading}</h1>}
+      {heading && <h1 className={`${ResponsiveHeading} font-semibold`}>{heading}</h1>}
 
       {/* ===== CONTENT BAR MODE (Screenshot Style) ===== */}
 
