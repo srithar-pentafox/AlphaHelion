@@ -23,29 +23,29 @@ export default function Footer() {
               </span>
             </a>
             <p className="mt-4 text-sm text-slate-400 max-w-xs">
-              Enterprise Technology & SAP Solutions
+              Digital transformation powered by SAP, Microsoft, Salesforce, AI, Data, and Cloud.
+              {/* AlphaHelion Global LLP enables organizations to drive digital
+              transformation and measurable business outcomes through expertise
+              in SAP, Microsoft, Salesforce, Data, AI, and Cloud technologies. */}
             </p>
           </div>
 
           <div>
-            <h3 className="text-white font-semibold mb-4">Solutions</h3>
+            {/* <h3 className="text-white font-semibold mb-4">Solutions</h3> */}
             <ul className="space-y-3 text-sm">
-              {/* <li>
-                <a
-                  href="/service"
-                  className="hover:text-white transition"
-                >
-                  Services
-                </a>
-              </li> */}
               <li>
-                <a href="/sapsolutions" className="hover:text-white transition">
-                  Solutions
+                <a href="/" className="hover:text-white transition">
+                 What We Do
+                </a>
+              </li>
+              <li>
+                <a href="/sapsolutions#" className="hover:text-white transition">
+                  Intelligent Solutions
                 </a>
               </li>
               <li>
                 <a href="/delivery" className="hover:text-white transition">
-                  Project Delivery
+                  Strategic Delivery
                 </a>
               </li>
             </ul>

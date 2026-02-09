@@ -79,8 +79,6 @@ const whatWeDo = [
 ];
 
 function WhatWeDo() {
-  const isOdd = whatWeDo.length % 2 !== 0;
-
   return (
     <ContentLayout>
       <section className="flex flex-col gap-8">
@@ -99,6 +97,30 @@ function WhatWeDo() {
         >
           {whatWeDo.map((item, index) => {
             const isLast = index === whatWeDo.length - 1;
+            const isOdd = whatWeDo.length % 2 !== 0;
+
+            return (
+              <div
+                key={index}
+                className={`
+        w-full
+        ${isOdd && isLast ? "md:col-span-2" : ""}
+      `}
+              >
+                <div
+                  className={`
+          h-full
+          ${isOdd && isLast ? "mx-auto md:max-w-[900px]" : ""}
+        `}
+                >
+                  <SimpleCard {...item} />
+                </div>
+              </div>
+            );
+          })}
+
+          {/* {whatWeDo.map((item, index) => {
+            const isLast = index === whatWeDo.length - 1;
 
             return (
               <div
@@ -116,7 +138,7 @@ function WhatWeDo() {
                 </div>
               </div>
             );
-          })}
+          })} */}
         </div>
       </section>
     </ContentLayout>

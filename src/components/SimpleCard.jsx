@@ -81,7 +81,7 @@ function SimpleCard({
 
   return (
     <section
-      className={`flex flex-col gap-2 p-3 ${THEME_COLORS?.[themeColor]?.cardBg ? THEME_COLORS?.[themeColor]?.cardBg : DEFAULT?.cardBg} border-2 ${THEME_COLORS?.[themeColor]?.border ? THEME_COLORS?.[themeColor]?.border : DEFAULT?.border} rounded-xl
+      className={`h-full flex flex-col gap-2 flex-grow p-3 ${THEME_COLORS?.[themeColor]?.cardBg ? THEME_COLORS?.[themeColor]?.cardBg : DEFAULT?.cardBg} border-2 ${THEME_COLORS?.[themeColor]?.border ? THEME_COLORS?.[themeColor]?.border : DEFAULT?.border} rounded-xl
       md:p-7 md:gap-4
       `}
       key={key}

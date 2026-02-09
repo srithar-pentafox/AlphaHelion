@@ -11,7 +11,7 @@ import deliveryHeroImage from "../../assets/delivery-hero.png"
 
 export const heroData = {
   heading: `
-    Delivery Excellence
+    Strategic Delivery
   `,
   tagline: "Deliver with Clarity | Control Risk | Realize Outcomes",
   description: `Portfolio, Program & Project Management. 

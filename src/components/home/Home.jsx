@@ -17,8 +17,8 @@ const heroData = {
     "AlphaHelion Global LLP is a technology consulting and digital solutions firm that helps organizations accelerate transformation, drive innovation, and achieve measurable business outcomes. With deep expertise in SAP, Microsoft, Salesforce, Data Science, AI, and Cloud technologies, we empower enterprises to modernize systems, automate operations, and create scalable, future-ready digital landscapes.",
   actionButtons: [
     {
-      label: "Explore Services",
-      href: "/service",
+      label: "Explore Solutions",
+      href: "/sapsolutions#",
       styles: {
         base: "bg-slate-900 text-white transition-colors duration-500",
         hover: `border-slate-400 md:hover:bg-white md:hover:text-slate-900 md:hover:shadow-lg`,
@@ -26,7 +26,7 @@ const heroData = {
       },
     },
     {
-      label: "Our Methodology",
+      label: "Our Deliveries",
       href: "/delivery",
       styles: {
         base: "bg-blue-500 text-white transition-colors duration-500",

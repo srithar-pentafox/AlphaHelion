@@ -1,5 +1,6 @@
 import { IconPointFilled } from "@tabler/icons-react";
 import React from "react";
+import { ResponsiveHeading } from "../constant/commonConfig";
 
 const THEME_COLORS = {
   blue: {
@@ -72,7 +73,7 @@ function QASimpleRender({
 }) {
   return (
     <section className="flex flex-col gap-4 w-full">
-      {heading && <h1 className="font-semibold text-xl">{heading}</h1>}
+      {heading && <h1 className={`${ResponsiveHeading} font-semibold text-blue-500`}>{heading}</h1>}
 
       {/* ===== CONTENT BAR MODE (Screenshot Style) ===== */}
 
@@ -92,10 +93,10 @@ function QASimpleRender({
                 key={index}
                 className="
                   relative rounded-lg px-5 py-4
-                  border-l-4 border-blue-400 bg-blue-100
+                  border-l-4 border-blue-400 bg-blue-50
                 "
               >
-                <div className="flex flex-col gap-1 pl-2">
+                <div className="flex flex-col gap-1">
                   <p className="font-semibold font-2xl text-slate-900">{title}</p>
                   {description && (
                     <p className="text-slate-600">{description}</p>
@@ -106,24 +107,6 @@ function QASimpleRender({
           })}
         </section>
       )}
-      {/* {withContentBar && content && (
-        <section
-          className="grid grid-cols-1 gap-4
-        md:grid-cols-2
-        "
-        >
-          <div
-            className="
-                  relative rounded-lg px-5 py-4
-                  border-l-4 border-blue-400 bg-blue-100
-                "
-          >
-            <div className="flex flex-col gap-1 pl-2">
-              <p className="font-semibold text-slate-900">{content}</p>
-            </div>
-          </div>
-        </section>
-      )} */}
 
       {/* ===== DEFAULT MODE (Existing behavior) ===== */}
       {!withContentBar && Array.isArray(content) && (

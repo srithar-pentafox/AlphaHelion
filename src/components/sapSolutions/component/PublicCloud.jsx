@@ -9,6 +9,7 @@ import {
   IconRocket,
 } from "@tabler/icons-react";
 import ListInCard from "../../ListInCard";
+import QASimpleRender from "../../QASimpleRender";
 
 const Icons = {
   contentIcon: <IconPointFilled size={17} className="text-blue-400" />,
@@ -82,20 +83,12 @@ const PublicCloudData = [
 ];
 
 const publicReason = {
-  title: "Why Choose AlphaHelion Global for SAP S/4HANA Public Cloud?",
-  contentList: [
-    {
-      title: "SAP clean-core, cloud-first strategy alignment",
-    },
-    {
-      title: "Expertise in GROW with SAP methodology",
-    },
-    {
-      title: "End-to-end advisory, implementation, and support services",
-    },
-    {
-      title: "Scalable, low-risk approach to digital transformation",
-    },
+  heading: "Why Choose AlphaHelion Global for SAP S/4HANA Public Cloud?",
+  content: [
+    "SAP clean-core, cloud-first strategy alignment",
+    "Expertise in GROW with SAP methodology",
+    "End-to-end advisory, implementation, and support services",
+    "Scalable, low-risk approach to digital transformation",
   ],
 };
 
@@ -118,14 +111,10 @@ function PublicCloud() {
           ))}
         </div>
 
-        <div>
-          <ListInCard
-            {...publicReason}
-            contentListIcon={
-              <IconPointFilled size={18} className="text-blue-400" />
-            }
-          />
-        </div>
+        <QASimpleRender 
+        withContentBar
+        {...publicReason}
+        />
       </section>
     </ContentLayout>
   );

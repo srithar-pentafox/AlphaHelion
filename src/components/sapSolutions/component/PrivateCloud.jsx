@@ -10,6 +10,7 @@ import {
   IconRocket,
 } from "@tabler/icons-react";
 import ListInCard from "../../ListInCard";
+import QASimpleRender from "../../QASimpleRender";
 
 const Icons = {
   contentIcon: <IconPointFilled size={17} className="text-blue-400" />,
@@ -82,20 +83,12 @@ const privateCloudData = [
 ];
 
 const privateReason = {
-  title: "Why AlphaHelion Global for SAP S/4HANA Private Cloud?",
-  contentList: [
-    {
-      title: "Expertise in private cloud deployment and hybrid landscapes",
-    },
-    {
-      title: "Alignment with SAP clean-core and enterprise best practices",
-    },
-    {
-      title: "End-to-end advisory, implementation, and managed support",
-    },
-    {
-      title: "Secure, scalable, and future-ready SAP landscapes",
-    },
+  heading: "Why AlphaHelion Global for SAP S/4HANA Private Cloud?",
+  content: [
+    "Expertise in private cloud deployment and hybrid landscapes",
+    "Alignment with SAP clean-core and enterprise best practices",
+    "End-to-end advisory, implementation, and managed support",
+    "Secure, scalable, and future-ready SAP landscapes",
   ],
 };
 
@@ -118,14 +111,7 @@ function PrivateCloud() {
           ))}
         </div>
 
-        <div>
-          <ListInCard
-            {...privateReason}
-            contentListIcon={
-              <IconPointFilled size={18} className="text-blue-400" />
-            }
-          />
-        </div>
+        <QASimpleRender withContentBar={true} {...privateReason} />
       </section>
     </ContentLayout>
   );
