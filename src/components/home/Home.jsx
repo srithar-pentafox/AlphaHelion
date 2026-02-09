@@ -81,7 +81,7 @@ function Home() {
 
       {/* <WhyChooseAlphaHelion /> */}
 
-      <div id="contact">
+      <div id="contact-form">
         <ContentLayout cardBg="bg-slate-50">
           <ContactForm />
         </ContentLayout>

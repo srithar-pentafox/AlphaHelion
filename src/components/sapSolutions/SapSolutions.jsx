@@ -23,7 +23,7 @@ export const heroData = {
   actionButtons: [
     {
       label: "Talk to an SAP Expert",
-      href: "/company",
+      href: "/sapsolutions#contact-form",
       styles: {
         base: "bg-blue-500 text-white",
         hover: "hover:bg-blue-600",
@@ -91,10 +91,11 @@ function SapSolutions() {
       <div id="successfactors">
         <SuccessFactors />
       </div>
-
+<div id="contact-form">
       <ContentLayout cardBg="bg-slate-50">
         <ContactForm />
       </ContentLayout>
+      </div>
     </section>
   );
 }

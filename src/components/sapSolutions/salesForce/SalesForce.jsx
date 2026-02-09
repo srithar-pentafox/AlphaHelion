@@ -27,7 +27,7 @@ From strategy and implementation to optimization and managed support, we deliver
   actionButtons: [
     {
       label: "Talk to an Salesforce Expert",
-      href: "/company",
+      href: "/salesforce#contact-form",
       styles: {
         base: "bg-blue-500 text-white",
         hover: "hover:bg-blue-600",
@@ -104,8 +104,7 @@ const salesForceData = [
       content: [
         "Application support and enhancements",
         "Release and change management",
-        "Performance optimization",
-        "User adoption and training",
+        "Performance optimization, user adoption and training",
         "Managed services and AMS models",
       ],
     },
@@ -224,10 +223,11 @@ function SalesForce() {
           </div>
         </section>
       </ContentLayout>
-
-      <ContentLayout cardBg="bg-slate-50">
-        <ContactForm />
-      </ContentLayout>
+      <div id="contact-form">
+        <ContentLayout cardBg="bg-slate-50">
+          <ContactForm />
+        </ContentLayout>
+      </div>
     </section>
   );
 }

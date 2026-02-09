@@ -26,8 +26,7 @@ const sapBtpPillars = [
       content: [
         "Reduce development time by up to 70%",
         "Enable business users to create apps",
-        "Ensure consistent user experience",
-        "Deploy instantly to cloud",
+        "Ensure consistent user experience & deploy instantly to cloud",
         "Leverage SAP best practices and templates",
       ],
     },

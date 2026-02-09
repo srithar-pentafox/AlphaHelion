@@ -180,7 +180,6 @@ export default function Navbar({ pathname }) {
             </div>
           </a>
 
-          {/* ================= DESKTOP NAV (LG+) ================= */}
           <nav className="hidden lg:flex gap-6 text-lg font-semibold relative whitespace-nowrap">
             <a href="/" className={linkClass("/")}>
               What We Do
@@ -202,41 +201,6 @@ export default function Navbar({ pathname }) {
                   className={`transition-transform ${isSolutionClicked ? "rotate-180" : ""}`}
                 />
               </div>
-
-              {/* {isSolutionClicked && (
-                <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[1000px] bg-blue-100 rounded-lg shadow-xl p-6 z-50">
-                  <div className="grid grid-cols-3 gap-6">
-                    {solutionItems.map((item, i) => (
-                      <div key={i}>
-                        <div
-                          className="flex items-center gap-3 p-3 rounded-md cursor-pointer hover:bg-blue-50"
-                          onClick={() => handleLinkClick(item)}
-                        >
-                          <item.Icon
-                            size={30}
-                            className="text-blue-400 bg-white p-1 rounded-md"
-                          />
-                          <span className="font-semibold">{item.title}</span>
-                        </div>
-
-                        {item.subCategories && (
-                          <div className="ml-8 mt-2 space-y-2">
-                            {item.subCategories.map((sub, si) => (
-                              <div
-                                key={si}
-                                className="text-sm cursor-pointer hover:text-blue-600 font-medium"
-                                onClick={() => handleLinkClick(sub)}
-                              >
-                                • {sub.title}
-                              </div>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )} */}
             </div>
 
             {/* DELIVERY */}
@@ -255,26 +219,6 @@ export default function Navbar({ pathname }) {
                   className={`transition-transform ${isDeliveryClicked ? "rotate-180" : ""}`}
                 />
               </div>
-
-              {/* {isDeliveryClicked && (
-                <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[800px] bg-blue-100 rounded-lg shadow-xl p-6 z-50">
-                  <div className="grid grid-cols-2 gap-3">
-                    {deliveryItems.map((item, i) => (
-                      <div
-                        key={i}
-                        className="flex items-center gap-3 p-3 rounded-md cursor-pointer hover:bg-blue-50"
-                        onClick={() => handleLinkClick(item)}
-                      >
-                        <item.Icon
-                          size={30}
-                          className="text-blue-400 bg-white p-1 rounded-md"
-                        />
-                        {item.title}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )} */}
             </div>
           </nav>
 
@@ -370,11 +314,11 @@ export default function Navbar({ pathname }) {
         {/* SIDEBAR HEADER WITH LOGO */}
         <div className="flex items-center justify-between p-4 border-b">
           <div className="flex items-center gap-3">
-            <img
+            {/* <img
               src={appLogo?.src}
               className="h-15 w-15 rounded-md"
               alt="AlphaHelion"
-            />
+            /> */}
             <div className="flex flex-col">
               <span className="font-bold text-base">AlphaHelion Global</span>
               <span className="text-xs text-blue-600">

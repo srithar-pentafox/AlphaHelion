@@ -299,10 +299,10 @@ const AccordionRender = ({ accData = [] }) => {
                         <p className={`${contentColor} text-md font-normal`}>{item}</p>
                       ) : (
                         <div className="flex flex-col gap-1">
-                          <p className={`${contentColor} font-semibold`}>
+                          <p className={`${contentColor} text-md font-semibold`}>
                             {item.split("--")[0]}
                           </p>
-                          <p className={`${contentColor} font-normal`}>
+                          <p className={`${contentColor} text-md font-normal`}>
                             {item.split("--")[1]}
                           </p>
                         </div>
@@ -311,7 +311,7 @@ const AccordionRender = ({ accData = [] }) => {
                   ))}
                 </section>
               ) : (
-                <p className={`${contentColor} font-normal`}>{QA?.content}</p>
+                <p className={`${contentColor} text-md font-normal`}>{QA?.content}</p>
               )}
             </section>
           </AccordionContent>

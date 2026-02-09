@@ -45,6 +45,7 @@ const PublicCloudData = [
         "Clear, actionable SAP Public Cloud adoption roadmap",
         "Defined scope, risks, and dependencies",
         "Alignment with SAP clean-core and cloud-first strategy",
+        "Reduced implementation uncertainty through early technical and validation"
       ],
     },
   },
